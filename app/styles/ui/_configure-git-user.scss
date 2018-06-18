@@ -1,0 +1,28 @@
+#configure-git-user {
+  .form-component {
+    margin: var(--spacing-double) 0;
+  }
+
+  // Styles for the commit list that's shown in the Configure Git component.
+  .commit-list-example {
+    position: relative;
+
+    background: white;
+
+    border: var(--base-border);
+    border-radius: var(--border-radius);
+
+    .header {
+      background: rgb(242, 248, 254);
+      padding: var(--spacing-half) var(--spacing);
+      font-size: var(--font-size-sm);
+    }
+
+    .commit {
+      font-size: var(--font-size);
+      padding: var(--spacing-half) var(--spacing);
+      width: 280px;
+      border-bottom: none;
+    }
+  }
+}

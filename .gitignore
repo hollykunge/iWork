@@ -1,0 +1,12 @@
+out/
+dist/
+node_modules/
+npm-debug.log
+yarn-error.log
+app/node_modules/
+.DS_Store
+.awcache
+.idea/
+.vs/
+.eslintcache
+*.iml
