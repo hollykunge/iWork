@@ -48,6 +48,7 @@ import {
   ToolbarDropdown,
   DropdownState,
   PushPullButton,
+  CreateTableButton,
   BranchDropdown,
   RevertProgress,
 } from './toolbar'
@@ -1523,7 +1524,7 @@ export class App extends React.Component<IAppProps, IAppState> {
     const state = selection.state
 
     return (
-      <CreateTableToolbarButton
+      <CreateTableButton
         dispatcher={this.props.dispatcher}
         repository={selection.repository}
       />
