@@ -1516,17 +1516,17 @@ export class App extends React.Component<IAppProps, IAppState> {
   }
 
   private renderCreateTableToolbarButton() {
-    const selection = this.state.selectedState
-    if (!selection || selection.type !== SelectionType.Repository) {
-      return null
-    }
+    // const selection = this.state.selectedState
+    // if (!selection || selection.type !== SelectionType.Repository) {
+    //   return null
+    // }
 
-    const state = selection.state
+    // const state = selection.state
 
     return (
       <CreateTableButton
-        dispatcher={this.props.dispatcher}
-        repository={selection.repository}
+      // dispatcher={this.props.dispatcher}
+      // repository={selection.repository}
       />
     )
   }

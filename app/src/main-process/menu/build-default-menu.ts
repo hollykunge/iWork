@@ -107,7 +107,7 @@ export function buildDefaultMenu(
   template.push(fileMenu)
 
   template.push({
-    label: __DARWIN__ ? 'Edit' : '&Edit',
+    label: __DARWIN__ ? '编辑' : '&编辑',
     submenu: [
       { role: 'undo', label: __DARWIN__ ? 'Undo' : '&Undo' },
       { role: 'redo', label: __DARWIN__ ? 'Redo' : '&Redo' },
@@ -124,7 +124,7 @@ export function buildDefaultMenu(
   })
 
   template.push({
-    label: __DARWIN__ ? 'View' : '&View',
+    label: __DARWIN__ ? '视图' : '&视图',
     submenu: [
       {
         label: __DARWIN__ ? 'Show Changes' : '&Changes',
@@ -206,7 +206,7 @@ export function buildDefaultMenu(
   })
 
   template.push({
-    label: __DARWIN__ ? 'Repository' : '&Repository',
+    label: __DARWIN__ ? '仓库' : '&仓库',
     id: 'repository',
     submenu: [
       {
