@@ -261,7 +261,7 @@ export function buildDefaultMenu(
   })
 
   template.push({
-    label: __DARWIN__ ? 'Branch' : '&Branch',
+    label: __DARWIN__ ? '分支' : '&分支',
     id: 'branch',
     submenu: [
       {
@@ -406,12 +406,12 @@ export function buildDefaultMenu(
     })
   } else {
     template.push({
-      label: '&Help',
+      label: '&帮助',
       submenu: [
         ...helpItems,
         separator,
         {
-          label: '&About GitHub Desktop',
+          label: '&关于iWork',
           click: emit('show-about'),
           id: 'about',
         },
