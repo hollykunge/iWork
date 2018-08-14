@@ -6,7 +6,7 @@ import { Account } from '../../models/account'
 import { getOS } from '../get-os'
 import { getGUID } from './get-guid'
 import { Repository } from '../../models/repository'
-import { merge } from '../../lib/merge'
+import { merge } from '../merge'
 
 const StatsEndpoint = 'https://central.github.com/api/usage/desktop'
 

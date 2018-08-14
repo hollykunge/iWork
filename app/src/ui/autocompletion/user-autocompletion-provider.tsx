@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { IAutocompletionProvider } from './index'
+import { IAutocompletionProvider } from '.'
 import { GitHubUserStore } from '../../lib/stores'
 import { GitHubRepository } from '../../models/github-repository'
 import { Account } from '../../models/account'
-import { IGitHubUser } from '../../lib/databases/index'
+import { IGitHubUser } from '../../lib/databases'
 
 /** An autocompletion hit for a user. */
 export interface IUserHit {

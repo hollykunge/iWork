@@ -16,9 +16,9 @@ import { IFetchProgress, IRevertProgress, ComparisonView } from '../app-state'
 
 import { IAppShell } from '../app-shell'
 import { ErrorWithMetadata, IErrorMetadata } from '../error-with-metadata'
-import { structuralEquals } from '../../lib/equality'
-import { compare } from '../../lib/compare'
-import { queueWorkHigh } from '../../lib/queue-work'
+import { structuralEquals } from '../equality'
+import { compare } from '../compare'
+import { queueWorkHigh } from '../queue-work'
 
 import {
   reset,

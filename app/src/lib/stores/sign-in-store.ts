@@ -1,7 +1,7 @@
 import { Disposable } from 'event-kit'
 import { Account } from '../../models/account'
 import { assertNever, fatalError } from '../fatal-error'
-import { askUserToOAuth } from '../../lib/oauth'
+import { askUserToOAuth } from '../oauth'
 import {
   validateURL,
   InvalidURLErrorName,
@@ -17,11 +17,11 @@ import {
   getDotComAPIEndpoint,
   getEnterpriseAPIURL,
   fetchMetadata,
-} from '../../lib/api'
+} from '../api'
 
-import { AuthenticationMode } from '../../lib/2fa'
+import { AuthenticationMode } from '../2fa'
 
-import { minimumSupportedEnterpriseVersion } from '../../lib/enterprise'
+import { minimumSupportedEnterpriseVersion } from '../enterprise'
 import { TypedBaseStore } from './base-store'
 
 function getUnverifiedUserErrorMessage(login: string): string {

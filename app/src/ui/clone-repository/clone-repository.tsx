@@ -104,7 +104,7 @@ export class CloneRepository extends React.Component<
     return (
       <Dialog
         className="clone-repository"
-        title={__DARWIN__ ? 'Clone a Repository' : 'Clone a repository'}
+        title={__DARWIN__ ? '获取任务包' : '获取任务包'}
         onSubmit={this.clone}
         onDismissed={this.props.onDismissed}
         loading={this.state.loading}
@@ -113,8 +113,8 @@ export class CloneRepository extends React.Component<
           onTabClicked={this.onTabClicked}
           selectedIndex={this.props.selectedTab}
         >
-          <span>GitHub.com</span>
-          <span>Enterprise</span>
+          <span>协同研发平台</span>
+          <span>其他平台</span>
           <span>URL</span>
         </TabBar>
 
@@ -147,9 +147,9 @@ export class CloneRepository extends React.Component<
       <DialogFooter>
         <ButtonGroup>
           <Button disabled={disabled} type="submit">
-            Clone
+            获取
           </Button>
-          <Button onClick={this.props.onDismissed}>Cancel</Button>
+          <Button onClick={this.props.onDismissed}>取消</Button>
         </ButtonGroup>
       </DialogFooter>
     )
@@ -209,14 +209,12 @@ export class CloneRepository extends React.Component<
   }
 
   private renderSignIn(tab: CloneRepositoryTab) {
-    const signInTitle = __DARWIN__ ? 'Sign In' : 'Sign in'
+    const signInTitle = __DARWIN__ ? '进入' : '进入'
     switch (tab) {
       case CloneRepositoryTab.DotCom:
         return (
           <CallToAction actionTitle={signInTitle} onAction={this.signInDotCom}>
-            <div>
-              Sign in to your GitHub.com account to access your repositories.
-            </div>
+            <div>登录你的协同研发平台，查看所有可获取的任务包。</div>
           </CallToAction>
         )
       case CloneRepositoryTab.Enterprise:

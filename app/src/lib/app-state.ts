@@ -19,11 +19,12 @@ import { IMenu } from '../models/app-menu'
 import { IRemote } from '../models/remote'
 import { WindowState } from './window-state'
 import { RetryAction } from './retry-actions'
-import { ExternalEditor } from '../lib/editors'
+import { ExternalEditor } from './editors'
 import { PreferencesTab } from '../models/preferences'
 import { Shell } from './shells'
 import { CloneRepositoryTab } from '../models/clone-repository-tab'
 import { BranchesTab } from '../models/branches-tab'
+import { ItemsTab } from '../models/items-tab'
 import { PullRequest } from '../models/pull-request'
 import { IAuthor } from '../models/author'
 import { ComparisonCache } from './comparison-cache'
@@ -178,6 +179,8 @@ export interface IAppState {
 
   /** The currently selected tab for the Branches foldout. */
   readonly selectedBranchesTab: BranchesTab
+
+  readonly selectedItemsTab: ItemsTab
 }
 
 export enum PopupType {

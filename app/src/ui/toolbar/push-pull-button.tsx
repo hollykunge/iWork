@@ -7,7 +7,7 @@ import { Repository } from '../../models/repository'
 import { IAheadBehind } from '../../models/branch'
 import { TipState } from '../../models/tip'
 import { RelativeTime } from '../relative-time'
-import { FetchType } from '../../lib/stores/index'
+import { FetchType } from '../../lib/stores'
 
 interface IPushPullButtonProps {
   /**
@@ -125,10 +125,10 @@ export class PushPullButton extends React.Component<IPushPullButtonProps, {}> {
 
   private getTitle(): string {
     if (!this.props.remoteName) {
-      return 'Publish repository'
+      return '发布任务包'
     }
     if (!this.props.aheadBehind) {
-      return 'Publish branch'
+      return '发布协作分支'
     }
 
     const { ahead, behind } = this.props.aheadBehind
@@ -198,7 +198,7 @@ export class PushPullButton extends React.Component<IPushPullButtonProps, {}> {
         </span>
       )
     } else {
-      return 'Never fetched'
+      return '尚未拉取'
     }
   }
 

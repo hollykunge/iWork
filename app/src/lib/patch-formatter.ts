@@ -1,4 +1,4 @@
-import { assertNever } from '../lib/fatal-error'
+import { assertNever } from './fatal-error'
 import { WorkingDirectoryFileChange, AppFileStatus } from '../models/status'
 import { DiffLineType, ITextDiff } from '../models/diff'
 

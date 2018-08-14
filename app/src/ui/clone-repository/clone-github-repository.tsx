@@ -139,7 +139,7 @@ export class CloneGithubRepository extends React.Component<
             placeholder="repository path"
             onValueChanged={this.onPathChanged}
           />
-          <Button onClick={this.onChooseDirectory}>Choose…</Button>
+          <Button onClick={this.onChooseDirectory}>选择…</Button>
         </Row>
       </DialogContent>
     )
@@ -149,7 +149,7 @@ export class CloneGithubRepository extends React.Component<
     if (this.state.loading) {
       return (
         <div className="clone-github-repo clone-loading">
-          <Loading /> Loading repositories…
+          <Loading /> 加载任务包中…
         </div>
       )
     }

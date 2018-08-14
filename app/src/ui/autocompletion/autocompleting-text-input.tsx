@@ -5,7 +5,7 @@ import {
   findNextSelectableRow,
   SelectionDirection,
 } from '../lib/list'
-import { IAutocompletionProvider } from './index'
+import { IAutocompletionProvider } from '.'
 import { fatalError } from '../../lib/fatal-error'
 import * as classNames from 'classnames'
 

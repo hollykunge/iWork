@@ -24,13 +24,13 @@ import { AppStore } from '../stores/app-store'
 import { CloningRepository } from '../../models/cloning-repository'
 import { Branch } from '../../models/branch'
 import { Commit } from '../../models/commit'
-import { ExternalEditor } from '../../lib/editors'
-import { IAPIUser } from '../../lib/api'
+import { ExternalEditor } from '../editors'
+import { IAPIUser } from '../api'
 import { GitHubRepository } from '../../models/github-repository'
 import { ICommitMessage } from '../stores/git-store'
 import { executeMenuItem } from '../../ui/main-process-proxy'
 import { AppMenu, ExecutableMenuItem } from '../../models/app-menu'
-import { matchExistingRepository } from '../../lib/repository-matching'
+import { matchExistingRepository } from '../repository-matching'
 import { ILaunchStats } from '../stats'
 import { fatalError, assertNever } from '../fatal-error'
 import { isGitOnPath } from '../is-git-on-path'
@@ -44,15 +44,16 @@ import {
   requestAuthenticatedUser,
   resolveOAuthRequest,
   rejectOAuthRequest,
-} from '../../lib/oauth'
+} from '../oauth'
 import { installCLI } from '../../ui/lib/install-cli'
 import { setGenericUsername, setGenericPassword } from '../generic-git-auth'
 import { RetryAction, RetryActionType } from '../retry-actions'
 import { Shell } from '../shells'
 import { CloneRepositoryTab } from '../../models/clone-repository-tab'
-import { validatedRepositoryPath } from '../../lib/stores/helpers/validated-repository-path'
+import { validatedRepositoryPath } from '../stores/helpers/validated-repository-path'
 import { BranchesTab } from '../../models/branches-tab'
-import { FetchType } from '../../lib/stores'
+import { ItemsTab } from '../../models/items-tab'
+import { FetchType } from '../stores'
 import { PullRequest } from '../../models/pull-request'
 import { IAuthor } from '../../models/author'
 import { ITrailer } from '../git/interpret-trailers'
@@ -1088,7 +1089,10 @@ export class Dispatcher {
   public changeBranchesTab(tab: BranchesTab): Promise<void> {
     return this.appStore._changeBranchesTab(tab)
   }
-
+  /** Change the selected Items foldout tab. */
+  public changeItemsTab(tab: ItemsTab): Promise<void> {
+    return this.appStore._changeItemsTab(tab)
+  }
   /**
    * Open the Create Pull Request page on GitHub after verifying ahead/behind.
    *

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ButtonGroup } from '../../ui/lib/button-group'
-import { Button } from '../../ui/lib/button'
-import { Dialog, DialogContent, DialogFooter } from '../../ui/dialog'
+import { ButtonGroup } from '../lib/button-group'
+import { Button } from '../lib/button'
+import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { Repository } from '../../models/repository'
 
 interface IConfirmRemoveRepositoryProps {

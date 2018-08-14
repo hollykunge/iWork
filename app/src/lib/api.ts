@@ -232,24 +232,24 @@ function toGitHubIsoDateString(date: Date) {
 }
 
 /**
- * An object for making authenticated requests to the GitHub API
+ * 一个用于对GitHub API进行身份验证请求的对象
  */
 export class API {
   private endpoint: string
   private token: string
 
-  /** Create a new API client from the given account. */
+  /** 从给定的帐户创建一个新的API客户端。 */
   public static fromAccount(account: Account): API {
     return new API(account.endpoint, account.token)
   }
 
-  /** Create a new API client for the endpoint, authenticated with the token. */
+  /** 为端点创建一个新的API客户端，并用令牌进行身份验证。 */
   public constructor(endpoint: string, token: string) {
     this.endpoint = endpoint
     this.token = token
   }
 
-  /** Fetch a repo by its owner and name. */
+  /** 取其所有者和名称的回购。 */
   public async fetchRepository(
     owner: string,
     name: string
@@ -267,7 +267,7 @@ export class API {
     }
   }
 
-  /** Fetch all repos a user has access to. */
+  /** 获取用户可以访问的所有repos。 */
   public async fetchRepositories(): Promise<ReadonlyArray<
     IAPIRepository
   > | null> {
@@ -279,7 +279,7 @@ export class API {
     }
   }
 
-  /** Fetch the logged in account. */
+  /** 获取已登录的帐户。 */
   public async fetchAccount(): Promise<IAPIUser> {
     try {
       const response = await this.request('GET', 'user')
@@ -291,7 +291,7 @@ export class API {
     }
   }
 
-  /** Fetch the current user's emails. */
+  /** 获取当前用户的电子邮件。 */
   public async fetchEmails(): Promise<ReadonlyArray<IAPIEmail>> {
     try {
       const response = await this.request('GET', 'user/emails')
@@ -304,7 +304,7 @@ export class API {
     }
   }
 
-  /** Fetch a commit from the repository. */
+  /** 从存储库获取commit。 */
   public async fetchCommit(
     owner: string,
     name: string,
@@ -324,7 +324,7 @@ export class API {
     }
   }
 
-  /** Search for a user with the given public email. */
+  /** 用给定的公共电子邮件搜索用户。 */
   public async searchForUserWithEmail(email: string): Promise<IAPIUser | null> {
     try {
       const params = { q: `${email} in:email type:user` }
@@ -449,11 +449,9 @@ export class API {
   }
 
   /**
-   * Authenticated requests to a paginating resource such as issues.
+   * 对诸如问题之类的分页资源的身份验证请求。
    *
-   * Follows the GitHub API hypermedia links to get the subsequent
-   * pages when available, buffers all items and returns them in
-   * one array when done.
+   * 遵循GitHub API超媒体链接，在可用的时候获取后续页面，缓冲所有条目，并在完成后将它们返回到一个数组中。
    */
   private async fetchAll<T>(path: string): Promise<ReadonlyArray<T>> {
     const buf = new Array<T>()
@@ -464,6 +462,7 @@ export class API {
     let nextPath: string | null = urlWithQueryString(path, params)
 
     do {
+      console.log(nextPath)
       const response = await this.request('GET', nextPath)
       if (response.status === HttpStatusCode.NotFound) {
         log.warn(`fetchAll: '${path}' returned a 404`)

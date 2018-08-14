@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IAutocompletionProvider } from './index'
+import { IAutocompletionProvider } from '.'
 import { compare } from '../../lib/compare'
 
 /**

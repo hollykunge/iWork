@@ -1,5 +1,5 @@
 import { IAheadBehind } from '../models/branch'
-import { revSymmetricDifference } from '../lib/git'
+import { revSymmetricDifference } from './git'
 
 export class ComparisonCache {
   private backingStore = new Map<string, IAheadBehind>()

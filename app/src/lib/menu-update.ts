@@ -1,6 +1,6 @@
 import { MenuIDs } from '../main-process/menu'
 import { merge } from './merge'
-import { IAppState, SelectionType } from '../lib/app-state'
+import { IAppState, SelectionType } from './app-state'
 import { Repository } from '../models/repository'
 import { CloningRepository } from '../models/cloning-repository'
 import { TipState } from '../models/tip'

@@ -48,7 +48,7 @@ import {
   ToolbarDropdown,
   DropdownState,
   PushPullButton,
-  CreateTableButton,
+  // CreateTableButton,
   BranchDropdown,
   RevertProgress,
 } from './toolbar'
@@ -1520,15 +1520,13 @@ export class App extends React.Component<IAppProps, IAppState> {
     // if (!selection || selection.type !== SelectionType.Repository) {
     //   return null
     // }
-
     // const state = selection.state
-
-    return (
-      <CreateTableButton
-      // dispatcher={this.props.dispatcher}
-      // repository={selection.repository}
-      />
-    )
+    // return (
+    //   <CreateTableButton
+    //   // dispatcher={this.props.dispatcher}
+    //   // repository={selection.repository}
+    //   />
+    // )
   }
 
   private showCreateBranch = () => {

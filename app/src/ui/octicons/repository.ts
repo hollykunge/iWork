@@ -1,4 +1,4 @@
-import { OcticonSymbol } from '../octicons'
+import { OcticonSymbol } from '.'
 import { Repository } from '../../models/repository'
 import { CloningRepository } from '../../models/cloning-repository'
 
