@@ -11,7 +11,7 @@ interface ICloneArgs extends mriArgv {
 
 const command: ICommandModule = {
   command: 'clone <url|slug>',
-  description: 'Clone a repository',
+  description: '获取任务',
   args: [
     {
       name: 'url|slug',

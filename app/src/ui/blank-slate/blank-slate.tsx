@@ -36,45 +36,37 @@ export class BlankSlateView extends React.Component<IBlankSlateProps, {}> {
 
         <div className="content">
           <div className="title">
-            {__DARWIN__ ? 'No Repositories Found' : 'No repositories found'}
+            {__DARWIN__ ? '找不到任务包' : '找不到任务包'}
           </div>
 
           <div className="callouts">
             <div className="callout">
               <Octicon symbol={OcticonSymbol.plus} />
-              <div>Create a new project and publish it to GitHub</div>
+              <div>创建一个任务并推送到WorkHub上</div>
               <Button onClick={this.props.onCreate}>
-                {__DARWIN__ ? 'Create New Repository' : 'Create new repository'}
+                {__DARWIN__ ? '创建新的任务包' : '创建新的任务包'}
               </Button>
             </div>
 
             <div className="callout">
               <Octicon symbol={OcticonSymbol.deviceDesktop} />
-              <div>
-                Add an existing project on your computer and publish it to
-                GitHub
-              </div>
+              <div>添加一个已经存在的任务包</div>
               <Button onClick={this.props.onAdd}>
-                {__DARWIN__
-                  ? 'Add a Local Repository'
-                  : 'Add a local repository'}
+                {__DARWIN__ ? '添加本地任务包' : '添加本地任务包'}
               </Button>
             </div>
 
             <div className="callout">
               <Octicon symbol={OcticonSymbol.repoClone} />
-              <div>Clone an existing project from GitHub to your computer</div>
+              <div>获取一个在WorkHub上的任务包</div>
               <Button onClick={this.props.onClone}>
-                {__DARWIN__ ? 'Clone a Repository' : 'Clone a repository'}
+                {__DARWIN__ ? '获取任务包' : '获取任务包'}
               </Button>
             </div>
           </div>
         </div>
 
-        <p className="footer">
-          Alternatively, you can drag and drop a local repository here to add
-          it.
-        </p>
+        <p className="footer">你也可以拖拽任务包到当前位置</p>
       </UiView>
     )
   }

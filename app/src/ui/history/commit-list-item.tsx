@@ -100,7 +100,7 @@ export class CommitListItem extends React.Component<
   private onContextMenu = (event: React.MouseEvent<any>) => {
     event.preventDefault()
 
-    let viewOnGitHubLabel = 'View on GitHub'
+    let viewOnGitHubLabel = '在WorkHub上查看'
     const gitHubRepository = this.props.gitHubRepository
 
     if (
@@ -112,7 +112,7 @@ export class CommitListItem extends React.Component<
 
     const items: IMenuItem[] = [
       {
-        label: __DARWIN__ ? 'Revert This Commit' : 'Revert this commit',
+        label: __DARWIN__ ? '撤销这次提交' : '撤销这次提交',
         action: () => {
           if (this.props.onRevertCommit) {
             this.props.onRevertCommit(this.props.commit)
@@ -121,7 +121,7 @@ export class CommitListItem extends React.Component<
       },
       { type: 'separator' },
       {
-        label: 'Copy SHA',
+        label: '拷贝SHA',
         action: this.onCopySHA,
       },
       {

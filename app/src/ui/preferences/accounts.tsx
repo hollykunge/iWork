@@ -27,12 +27,12 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
   public render() {
     return (
       <DialogContent className="accounts-tab">
-        <h2>GitHub.com</h2>
+        <h2>WorkHub</h2>
         {this.props.dotComAccount
           ? this.renderAccount(this.props.dotComAccount)
           : this.renderSignIn(SignInType.DotCom)}
 
-        <h2>Enterprise</h2>
+        <h2>私有云</h2>
         {this.props.enterpriseAccount
           ? this.renderAccount(this.props.enterpriseAccount)
           : this.renderSignIn(SignInType.Enterprise)}
@@ -58,7 +58,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
           <div className="login">@{account.login}</div>
         </div>
         <Button onClick={this.logout(account)}>
-          {__DARWIN__ ? 'Sign Out' : 'Sign out'}
+          {__DARWIN__ ? '退出' : '退出'}
         </Button>
       </Row>
     )
@@ -73,7 +73,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
   }
 
   private renderSignIn(type: SignInType) {
-    const signInTitle = __DARWIN__ ? 'Sign In' : 'Sign in'
+    const signInTitle = __DARWIN__ ? '进入' : '进入'
     switch (type) {
       case SignInType.DotCom: {
         return (
@@ -81,9 +81,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
             actionTitle={signInTitle}
             onAction={this.onDotComSignIn}
           >
-            <div>
-              Sign in to your GitHub.com account to access your repositories.
-            </div>
+            <div>登陆WorkHub来获取你的任务包</div>
           </CallToAction>
         )
       }
@@ -93,10 +91,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
             actionTitle={signInTitle}
             onAction={this.onEnterpriseSignIn}
           >
-            <div>
-              If you have a GitHub Enterprise account at work, sign in to it to
-              get access to your repositories.
-            </div>
+            <div>登陆私有云来获取你的任务包</div>
           </CallToAction>
         )
       default:

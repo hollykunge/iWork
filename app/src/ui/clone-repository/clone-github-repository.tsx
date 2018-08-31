@@ -135,11 +135,11 @@ export class CloneGithubRepository extends React.Component<
         <Row className="local-path-field">
           <TextBox
             value={this.props.path}
-            label={__DARWIN__ ? 'Local Path' : 'Local path'}
-            placeholder="repository path"
+            label={__DARWIN__ ? '本地存放路径' : '本地存放路径'}
+            placeholder="包路径"
             onValueChanged={this.onPathChanged}
           />
-          <Button onClick={this.onChooseDirectory}>Choose…</Button>
+          <Button onClick={this.onChooseDirectory}>选择…</Button>
         </Row>
       </DialogContent>
     )
@@ -149,7 +149,7 @@ export class CloneGithubRepository extends React.Component<
     if (this.state.loading) {
       return (
         <div className="clone-github-repo clone-loading">
-          <Loading /> Loading repositories…
+          <Loading /> 加载任务包中…
         </div>
       )
     }
@@ -194,7 +194,7 @@ export class CloneGithubRepository extends React.Component<
   private renderGroupHeader = (identifier: string) => {
     let header = identifier
     if (identifier === YourRepositoriesIdentifier) {
-      header = __DARWIN__ ? 'Your Repositories' : 'Your repositories'
+      header = __DARWIN__ ? '我的任务' : '我的任务'
     }
     return (
       <div className="clone-repository-list-content clone-repository-list-group-header">

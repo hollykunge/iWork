@@ -104,7 +104,7 @@ export class CloneRepository extends React.Component<
     return (
       <Dialog
         className="clone-repository"
-        title={__DARWIN__ ? 'Clone a Repository' : 'Clone a repository'}
+        title={__DARWIN__ ? '获取任务包' : '获取任务包'}
         onSubmit={this.clone}
         onDismissed={this.props.onDismissed}
         loading={this.state.loading}
@@ -113,9 +113,9 @@ export class CloneRepository extends React.Component<
           onTabClicked={this.onTabClicked}
           selectedIndex={this.props.selectedTab}
         >
-          <span>GitHub.com</span>
-          <span>Enterprise</span>
-          <span>URL</span>
+          <span>WorkHub</span>
+          <span>私有云</span>
+          <span>其它</span>
         </TabBar>
 
         {error ? <DialogError>{error.message}</DialogError> : null}
@@ -147,9 +147,9 @@ export class CloneRepository extends React.Component<
       <DialogFooter>
         <ButtonGroup>
           <Button disabled={disabled} type="submit">
-            Clone
+            获取
           </Button>
-          <Button onClick={this.props.onDismissed}>Cancel</Button>
+          <Button onClick={this.props.onDismissed}>取消</Button>
         </ButtonGroup>
       </DialogFooter>
     )

@@ -63,9 +63,9 @@ export class CommitAttribution extends React.Component<
   private renderCommitter(committer: CommitIdentity) {
     return (
       <span className="committer">
-        {' and '}
+        {' 和 '}
         {this.renderAuthorInline(committer)}
-        {' committed'}
+        {' 已提交'}
       </span>
     )
   }

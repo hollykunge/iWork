@@ -84,7 +84,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
     return (
       <Dialog
         id="publish-repository"
-        title={__DARWIN__ ? 'Publish Repository' : 'Publish repository'}
+        title={__DARWIN__ ? '发布任务包' : '发布任务包'}
         onDismissed={this.props.onDismissed}
         onSubmit={this.publishRepository}
         disabled={this.state.publishing}
@@ -94,8 +94,8 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
           onTabClicked={this.onTabClicked}
           selectedIndex={this.state.currentTab}
         >
-          <span>GitHub.com</span>
-          <span>Enterprise</span>
+          <span>WorkHub</span>
+          <span>私有云</span>
         </TabBar>
 
         {this.state.error ? (
@@ -160,9 +160,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
       case PublishTab.DotCom:
         return (
           <CallToAction actionTitle={signInTitle} onAction={this.signInDotCom}>
-            <div>
-              Sign in to your GitHub.com account to access your repositories.
-            </div>
+            <div>登陆WorkHub来获取你的任务包</div>
           </CallToAction>
         )
       case PublishTab.Enterprise:
@@ -171,10 +169,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
             actionTitle={signInTitle}
             onAction={this.signInEnterprise}
           >
-            <div>
-              If you have a GitHub Enterprise account at work, sign in to it to
-              get access to your repositories.
-            </div>
+            <div>登陆私有云来获取你的任务包</div>
           </CallToAction>
         )
       default:
@@ -191,9 +186,9 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
         <DialogFooter>
           <ButtonGroup>
             <Button type="submit" disabled={disabled}>
-              {__DARWIN__ ? 'Publish Repository' : 'Publish repository'}
+              {__DARWIN__ ? '发布任务包' : '发布任务包'}
             </Button>
-            <Button onClick={this.props.onDismissed}>Cancel</Button>
+            <Button onClick={this.props.onDismissed}>取消</Button>
           </ButtonGroup>
         </DialogFooter>
       )

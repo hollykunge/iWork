@@ -51,11 +51,11 @@ export class CloneGenericRepository extends React.Component<
         <Row>
           <TextBox
             value={this.props.path}
-            label={__DARWIN__ ? 'Local Path' : 'Local path'}
-            placeholder="repository path"
+            label={__DARWIN__ ? '本地存放路径' : '本地存放路径'}
+            placeholder="包路径"
             onValueChanged={this.props.onPathChanged}
           />
-          <Button onClick={this.onChooseDirectory}>Choose…</Button>
+          <Button onClick={this.onChooseDirectory}>选择…</Button>
         </Row>
       </DialogContent>
     )
