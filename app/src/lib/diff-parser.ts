@@ -5,7 +5,7 @@ import {
   DiffLine,
   DiffLineType,
 } from '../models/diff'
-import { assertNever } from '../lib/fatal-error'
+import { assertNever } from './fatal-error'
 
 // https://en.wikipedia.org/wiki/Diff_utility
 //

@@ -34,13 +34,13 @@ export class CloneGenericRepository extends React.Component<
       <DialogContent className="clone-generic-repository-content">
         <Row>
           <TextBox
-            placeholder="URL or username/repository"
+            placeholder="存储库URL或WorkHub用户名和存储库"
             value={this.props.url}
             onValueChanged={this.onUrlChanged}
             autoFocus={true}
             label={
               <span>
-                Repository URL or GitHub username and repository
+                存储库URL或WorkHub用户名和存储库
                 <br />
                 (<Ref>hubot/cool-repo</Ref>)
               </span>

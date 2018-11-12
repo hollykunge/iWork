@@ -64,10 +64,10 @@ export function buildDefaultMenu(
   }
 
   const fileMenu: Electron.MenuItemConstructorOptions = {
-    label: __DARWIN__ ? '文件' : '&文件',
+    label: __DARWIN__ ? '任务' : '&任务',
     submenu: [
       {
-        label: __DARWIN__ ? 'New Repository…' : 'New &repository…',
+        label: __DARWIN__ ? '新建任务…' : '新建&任务…',
         id: 'new-repository',
         click: emit('create-repository'),
         accelerator: 'CmdOrCtrl+N',

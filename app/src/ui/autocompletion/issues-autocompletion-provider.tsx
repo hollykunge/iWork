@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IAutocompletionProvider } from './index'
+import { IAutocompletionProvider } from '.'
 import { IssuesStore } from '../../lib/stores'
 import { Dispatcher } from '../../lib/dispatcher'
 import { GitHubRepository } from '../../models/github-repository'

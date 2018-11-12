@@ -5,9 +5,9 @@ import {
   List,
   SelectionSource as ListSelectionSource,
   findNextSelectableRow,
-} from '../lib/list'
-import { TextBox } from '../lib/text-box'
-import { Row } from '../lib/row'
+} from './list'
+import { TextBox } from './text-box'
+import { Row } from './row'
 
 import { match, IMatch, IMatches } from '../../lib/fuzzy-find'
 

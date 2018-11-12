@@ -162,14 +162,15 @@ export async function parsedResponse<T>(response: Response): Promise<T> {
 }
 
 /**
- * Appends the parameters provided to the url as query string parameters.
+ * 附加作为查询字符串参数提供给url的参数。
  *
- * If the url already has a query the new parameters will be appended.
+ * 如果url已经有了查询，那么将追加新的参数。
  */
 export function urlWithQueryString(
   url: string,
   params: { [key: string]: string }
 ): string {
+  console.log(url)
   const qs = Object.keys(params)
     .map(key => `${key}=${encodeURIComponent(params[key])}`)
     .join('&')

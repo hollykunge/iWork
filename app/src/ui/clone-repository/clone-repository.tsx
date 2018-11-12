@@ -209,14 +209,12 @@ export class CloneRepository extends React.Component<
   }
 
   private renderSignIn(tab: CloneRepositoryTab) {
-    const signInTitle = __DARWIN__ ? 'Sign In' : 'Sign in'
+    const signInTitle = __DARWIN__ ? '进入' : '进入'
     switch (tab) {
       case CloneRepositoryTab.DotCom:
         return (
           <CallToAction actionTitle={signInTitle} onAction={this.signInDotCom}>
-            <div>
-              Sign in to your GitHub.com account to access your repositories.
-            </div>
+            <div>登录你的协同研发平台，查看所有可获取的任务包。</div>
           </CallToAction>
         )
       case CloneRepositoryTab.Enterprise:

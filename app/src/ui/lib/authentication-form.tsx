@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { LinkButton } from '../lib/link-button'
+import { LinkButton } from './link-button'
 import { Octicon, OcticonSymbol } from '../octicons'
 import { Loading } from './loading'
 import { Form } from './form'

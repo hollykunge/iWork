@@ -1,4 +1,4 @@
-import { Dispatcher } from './index'
+import { Dispatcher } from '.'
 import { GitError } from '../git/core'
 import {
   GitError as DugiteError,
@@ -8,10 +8,10 @@ import { ErrorWithMetadata } from '../error-with-metadata'
 import { ExternalEditorError } from '../editors/shared'
 import { AuthenticationErrors } from '../git/authentication'
 import { Repository } from '../../models/repository'
-import { PopupType } from '../../lib/app-state'
+import { PopupType } from '../app-state'
 import { ShellError } from '../shells'
 import { UpstreamAlreadyExistsError } from '../stores/upstream-already-exists-error'
-import { FetchType } from '../stores/index'
+import { FetchType } from '../stores'
 
 /** An error which also has a code property. */
 interface IErrorWithCode extends Error {

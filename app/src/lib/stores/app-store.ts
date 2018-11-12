@@ -38,8 +38,8 @@ import {
   matchGitHubRepository,
   IMatchedGitHubRepository,
   repositoryMatchesRemote,
-} from '../../lib/repository-matching'
-import { API, getAccountForEndpoint, IAPIUser } from '../../lib/api'
+} from '../repository-matching'
+import { API, getAccountForEndpoint, IAPIUser } from '../api'
 import { caseInsensitiveCompare } from '../compare'
 import { Branch, eligibleForFastForward } from '../../models/branch'
 import { TipState } from '../../models/tip'
@@ -101,7 +101,7 @@ import {
   EmojiStore,
   GitHubUserStore,
   CloningRepositoriesStore,
-} from '../stores'
+} from '.'
 import { validatedRepositoryPath } from './helpers/validated-repository-path'
 import { IGitAccount } from '../git/authentication'
 import { getGenericHostname, getGenericUsername } from '../generic-git-auth'
@@ -122,6 +122,7 @@ import {
 import { CloneRepositoryTab } from '../../models/clone-repository-tab'
 import { getAccountForRepository } from '../get-account-for-repository'
 import { BranchesTab } from '../../models/branches-tab'
+import { ItemsTab } from '../../models/items-tab'
 import { Owner } from '../../models/owner'
 import { PullRequest } from '../../models/pull-request'
 import { PullRequestUpdater } from './helpers/pull-request-updater'
@@ -258,6 +259,8 @@ export class AppStore extends TypedBaseStore<IAppState> {
   private selectedCloneRepositoryTab = CloneRepositoryTab.DotCom
 
   private selectedBranchesTab = BranchesTab.Branches
+
+  private selectedItemsTab = ItemsTab.Items
 
   public constructor(
     gitHubUserStore: GitHubUserStore,
@@ -592,6 +595,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
       repositoryFilterText: this.repositoryFilterText,
       selectedCloneRepositoryTab: this.selectedCloneRepositoryTab,
       selectedBranchesTab: this.selectedBranchesTab,
+      selectedItemsTab: this.selectedItemsTab,
     }
   }
 
@@ -3310,7 +3314,13 @@ export class AppStore extends TypedBaseStore<IAppState> {
 
     return Promise.resolve()
   }
+  public _changeItemsTab(tab: ItemsTab): Promise<void> {
+    this.selectedItemsTab = tab
 
+    this.emitUpdate()
+
+    return Promise.resolve()
+  }
   public async _createPullRequest(repository: Repository): Promise<void> {
     const gitHubRepository = repository.gitHubRepository
     if (!gitHubRepository) {
